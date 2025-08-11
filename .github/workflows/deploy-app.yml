@@ -1,0 +1,15 @@
+# The workflow will run and display "Deploying app" on every push to the main branch
+name: deploy-app
+on:
+  push:
+     branches:
+       - main
+jobs:
+  Deploy:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout code
+         uses: actions/checout@v4
+
+       - name: Deploy Application
+         run: echo " Deploying app..."
